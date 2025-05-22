@@ -1,34 +1,85 @@
-## EX. NO: 1 : IMPLEMENTATION OF CAESAR CIPHER
- 
-
-## AIM:
-
-To implement the simple substitution technique named Caesar cipher using C language.
-
-## DESCRIPTION:
-
-To encrypt a message with a Caesar cipher, each letter in the message is changed using a simple rule: shift by three. Each letter is replaced by the letter three letters ahead in the alphabet. A becomes D, B becomes E, and so on. For the last letters, we can think of the
-alphabet as a circle and "wrap around". W becomes Z, X becomes A, Y bec mes B, and Z
-becomes C. To change a message back, each letter is replaced by the one three before it.
-
-## EXAMPLE:
+# Cryptography---19CS412-classical-techqniques
 
 
+## Caeser Cipher
 
-![image](https://github.com/Hemamanigandan/CNS/assets/149653568/eb9c6c43-8c80-4cdd-b9d4-91705a311c79)
+Caeser Cipher using with different key values
 
+# AIM:
 
-## ALGORITHM:
-
-### STEP-1: Read the plain text from the user.
-### STEP-2: Read the key value from the user.
-### STEP-3: If the key is positive then encrypt the text by adding the key with each character in the plain text.
-### STEP-4: Else subtract the key from the plain text.
-### STEP-5: Display the cipher text obtained above.
+To develop a simple C program to implement Caeser Cipher.
 
 
-PROGRAM :-
+## DESIGN STEPS:
+
+### Step 1:
+
+Design of Caeser Cipher algorithnm 
+
+### Step 2:
+
+Implementation using C or pyhton code
+
+### Step 3:
+
+Testing algorithm with different key values. 
+
+## PROGRAM:
+```
+#include <stdio.h>
+#include <string.h>
+
+int main()
+ {
+    int key;
+    char s[1000];
+
+    printf("Enter a plaintext to encrypt:\n");
+    fgets(s, sizeof(s), stdin);
+    printf("Enter key:\n");
+    scanf("%d", &key);
+
+    int n = strlen(s);
+
+    for (int i = 0; i < n; i++) 
+    {
+        char c = s[i];
+        if (c >= 'a' && c <= 'z') 
+        {
+            s[i] = 'a' + (c - 'a' + key) % 26;
+        }
+        else if (c >= 'A' && c <= 'Z')
+        {
+            s[i] = 'A' + (c - 'A' + key) % 26;
+        }
+    }
+    printf("Encrypted message: %s\n", s);
+
+    for (int i = 0; i < n; i++)
+    {
+        char c = s[i];
+        if (c >= 'a' && c <= 'z') 
+        {
+            s[i] = 'a' + (c - 'a' - key + 26) % 26; 
+        }
+        else if (c >= 'A' && c <= 'Z')
+        {
+            s[i] = 'A' + (c - 'A' - key + 26) % 26; 
+        }
+    }
+    printf("Decrypted message: %s\n", s);
+
+    return 0;
+}
+
+```
+
+## OUTPUT:
+![image](https://github.com/user-attachments/assets/eda70cec-718a-4fa8-a85a-3c7f5ef84adf)
 
 
 
-OUTPUT :-
+
+## RESULT:
+The program is executed successfully
+
