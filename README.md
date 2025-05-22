@@ -75,9 +75,7 @@ int main()
 ```
 
 ## OUTPUT:
-![image](https://github.com/user-attachments/assets/eda70cec-718a-4fa8-a85a-3c7f5ef84adf)
-
-
+![image](https://github.com/user-attachments/assets/40cc1fc3-4a68-4049-93d8-7dd61ea195fe)
 
 
 ## RESULT:
